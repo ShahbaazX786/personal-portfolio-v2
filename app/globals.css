@@ -9,13 +9,21 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  font-family: var(--font-georama);
 }
 
 @theme {
-  --font-georama: "Georama", sans-serif;
-  --font-roboto: "Roboto Mono", monospace;
   --breakpoint-3xl: 1920px;
 }
+
+@utility font-georama {
+  font-family: var(--font-georama);
+}
+
+@utility font-roboto-mono {
+  font-family: var(--font-roboto-mono);
+}
+
 
 @utility flex-center {
   @apply flex items-center justify-center;
@@ -71,7 +79,7 @@ body {
       @apply sm:hidden m-7 bg-red-300/20 backdrop-blur-lg p-3 rounded-md absolute top-10;
 
       p {
-        @apply flex-1 text-[16px] text-center font-roboto text-gray-400;
+        @apply flex-1 text-[16px] text-center font-roboto-mono text-gray-400;
       }
     }
   }
@@ -168,7 +176,7 @@ body {
     }
 
     .techstack {
-      @apply text-sm font-roboto p-5;
+      @apply text-sm font-roboto-mono p-5;
 
       .label {
         @apply flex items-center ms-10 mt-7;
