@@ -7,9 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "s":"cls && npm run dev"
+    "s": "cls && npm run dev"
   },
   "dependencies": {
+    "dayjs": "^1.11.19",
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3"
