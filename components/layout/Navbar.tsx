@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav>
       <div>
         <Image
-          src={"/images/logo.svg"}
+          src={"/icons/logo.svg"}
           alt="Apple Logo"
           width={100}
           height={100}
