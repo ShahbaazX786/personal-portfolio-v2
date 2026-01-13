@@ -33,3 +33,10 @@ const navIcons = [
 ] as const;
 
 export { NavbarMenu, navIcons };
+
+const WELCOME_PAGE_FONT_WEIGHTS: any = {
+  subtitle: { min: 100, max: 400, default: 100 },
+  title: { min: 400, max: 900, default: 400 },
+} as const;
+
+export { WELCOME_PAGE_FONT_WEIGHTS };
