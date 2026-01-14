@@ -1,4 +1,11 @@
-const NavbarMenu = [
+import {
+  DockAppType,
+  NavbarMenuType,
+  NavIconsType,
+  WELCOME_PAGE_FONT_WEIGHTS_TYPE,
+} from "../types/types.constants";
+
+const NavbarMenu: NavbarMenuType[] = [
   {
     id: 1,
     name: "Portfolio",
@@ -13,7 +20,7 @@ const NavbarMenu = [
   },
 ] as const;
 
-const NavIcons = [
+const NavIcons: NavIconsType[] = [
   {
     id: 1,
     img: "/icons/wifi.svg",
@@ -32,7 +39,7 @@ const NavIcons = [
   },
 ] as const;
 
-const DockApps = [
+const DockApps: DockAppType[] = [
   {
     id: "finder",
     name: "Portfolio",
@@ -73,12 +80,12 @@ const DockApps = [
 
 export { NavbarMenu, NavIcons, DockApps };
 
-const WELCOME_PAGE_FONT_WEIGHTS: any = {
+const WELCOME_PAGE_FONT_WEIGHTS: WELCOME_PAGE_FONT_WEIGHTS_TYPE = {
   subtitle: { min: 100, max: 400, default: 100 },
   title: { min: 400, max: 900, default: 400 },
 } as const;
 
-const INITIAL_Z_INDEX = 1000;
+const INITIAL_Z_INDEX: number = 1000;
 
 const WINDOW_CONFIG = {
   finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
@@ -89,6 +96,7 @@ const WINDOW_CONFIG = {
   terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  trash: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 } as const;
 
 export { WELCOME_PAGE_FONT_WEIGHTS, WINDOW_CONFIG, INITIAL_Z_INDEX };
