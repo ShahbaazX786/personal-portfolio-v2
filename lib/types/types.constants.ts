@@ -8,6 +8,7 @@ type NavIconsType = {
 type NavbarMenuType = {
   id: number;
   name: string;
+  type: string;
 };
 
 type DockAppType = {
