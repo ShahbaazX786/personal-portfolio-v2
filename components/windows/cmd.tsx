@@ -1,4 +1,4 @@
-import { techStack } from "@/lib/constants/constants";
+import { TechStack } from "@/lib/constants/constants";
 import { Check, Flag } from "lucide-react";
 import WindowWrapper from "../wrappers/WindowWrapper";
 
@@ -22,7 +22,7 @@ const CommandCLI = () => {
         </div>
 
         <ul className="content">
-          {techStack.map(({ category, items }) => (
+          {TechStack.map(({ category, items }) => (
             <li key={category} className="flex items-center">
               <Check className="check" size={20} />
               <h3>{category}</h3>
