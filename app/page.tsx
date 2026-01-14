@@ -4,6 +4,7 @@ import BottomDock from "@/components/layout/BottomDock";
 import Navbar from "@/components/layout/Navbar";
 import Welcome from "@/components/Welcome";
 import CommandCLI from "@/components/windows/cmd";
+import SafariWindow from "@/components/windows/SafariBrowser";
 import gsap from "gsap";
 import { Draggable } from "gsap/all";
 
@@ -18,6 +19,7 @@ export default function Home() {
       <BottomDock />
 
       <CommandCLI />
+      <SafariWindow />
     </main>
   );
 }
