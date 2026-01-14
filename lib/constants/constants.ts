@@ -78,7 +78,34 @@ const DockApps: DockAppType[] = [
   },
 ];
 
-export { NavbarMenu, NavIcons, DockApps };
+const TechStack = [
+  {
+    category: "Frontend",
+    items: ["React.js", "Next.js", "TypeScript"],
+  },
+  {
+    category: "Mobile",
+    items: ["React Native", "Expo"],
+  },
+  {
+    category: "Styling",
+    items: ["Tailwind CSS", "Sass", "CSS"],
+  },
+  {
+    category: "Backend",
+    items: ["Node.js", "Express", "NestJS", "Hono"],
+  },
+  {
+    category: "Database",
+    items: ["MongoDB", "PostgreSQL"],
+  },
+  {
+    category: "Dev Tools",
+    items: ["Git", "GitHub", "Docker"],
+  },
+];
+
+export { DockApps, NavbarMenu, NavIcons, TechStack };
 
 const WELCOME_PAGE_FONT_WEIGHTS: WELCOME_PAGE_FONT_WEIGHTS_TYPE = {
   subtitle: { min: 100, max: 400, default: 100 },
@@ -99,4 +126,4 @@ const WINDOW_CONFIG = {
   trash: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 } as const;
 
-export { WELCOME_PAGE_FONT_WEIGHTS, WINDOW_CONFIG, INITIAL_Z_INDEX };
+export { INITIAL_Z_INDEX, WELCOME_PAGE_FONT_WEIGHTS, WINDOW_CONFIG };
