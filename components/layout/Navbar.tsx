@@ -1,4 +1,4 @@
-import { NavbarMenu, navIcons } from "@/lib/constants/constants";
+import { NavbarMenu, NavIcons } from "@/lib/constants/constants";
 import dayjs from "dayjs";
 import Image from "next/image";
 
@@ -25,7 +25,7 @@ const Navbar = () => {
 
       <div>
         <ul>
-          {navIcons.map(({ id, img }) => (
+          {NavIcons.map(({ id, img }) => (
             <li key={id}>
               <Image
                 src={img}
