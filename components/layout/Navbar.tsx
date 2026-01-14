@@ -1,8 +1,12 @@
 import { NavbarMenu, NavIcons } from "@/lib/constants/constants";
+import { WindowKey } from "@/store/types/window.store.type";
+import useWindowStore from "@/store/window.store";
 import dayjs from "dayjs";
 import Image from "next/image";
 
 const Navbar = () => {
+  const { openWindow } = useWindowStore();
+
   return (
     <nav>
       <div>
@@ -15,8 +19,8 @@ const Navbar = () => {
         />
         <p className="font-bold">Shahbaaz&apos;s Portfolio</p>
         <ul>
-          {NavbarMenu.map(({ id, name }) => (
-            <li key={id}>
+          {NavbarMenu.map(({ id, name, type }) => (
+            <li key={id} onClick={() => openWindow(type as WindowKey)}>
               <p>{name}</p>
             </li>
           ))}
