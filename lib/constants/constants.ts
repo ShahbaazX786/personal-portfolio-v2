@@ -105,7 +105,31 @@ const TechStack = [
   },
 ];
 
-export { DockApps, NavbarMenu, NavIcons, TechStack };
+const BlogPosts = [
+  {
+    id: 1,
+    date: "Sep 2, 2025",
+    title:
+      "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
+    image: "/images/blog1.png",
+    link: "https://www.google.com",
+  },
+  {
+    id: 2,
+    date: "Aug 28, 2025",
+    title: "Angular state management with rxjs subjects",
+    image: "/images/blog2.png",
+    link: "https://www.google.com",
+  },
+  {
+    id: 3,
+    date: "Aug 15, 2025",
+    title: "The Ultimate Guide to Mastering Zustand state management",
+    image: "/images/blog3.png",
+    link: "https://www.google.com",
+  },
+];
+export { DockApps, NavbarMenu, NavIcons, TechStack, BlogPosts };
 
 const WELCOME_PAGE_FONT_WEIGHTS: WELCOME_PAGE_FONT_WEIGHTS_TYPE = {
   subtitle: { min: 100, max: 400, default: 100 },
