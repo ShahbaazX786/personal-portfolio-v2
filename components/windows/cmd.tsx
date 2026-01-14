@@ -1,12 +1,13 @@
 import { TechStack } from "@/lib/constants/constants";
 import { Check, Flag } from "lucide-react";
 import WindowWrapper from "../wrappers/WindowWrapper";
+import WindowControls from "./WindowControls";
 
 const CommandCLI = () => {
   return (
     <>
       <div id="window-header">
-        <p>Window Controls</p>
+        <WindowControls target={"terminal"} />
         <h2>Tech Stack</h2>
       </div>
 
