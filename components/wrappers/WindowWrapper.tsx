@@ -2,6 +2,7 @@ import { WindowKey } from "@/store/types/window.store.type";
 import useWindowStore from "@/store/window.store";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { Draggable } from "gsap/all";
 import React, { useLayoutEffect, useRef } from "react";
 
 const WindowWrapper = <P extends object>(
@@ -11,9 +12,10 @@ const WindowWrapper = <P extends object>(
   const Wrapped = (props: P) => {
     const windowRef = useRef<HTMLDivElement | null>(null);
 
-    const { windows } = useWindowStore();
+    const { windows, focusWindow } = useWindowStore();
     const { zIndex, isOpen } = windows[windowKey];
 
+    // Show Animation
     useGSAP(() => {
       const el = windowRef.current;
       if (!el || !isOpen) return;
@@ -26,6 +28,14 @@ const WindowWrapper = <P extends object>(
         { scale: 1, opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }
       );
     }, [isOpen]);
+
+    // Make window draggable
+    useGSAP(() => {
+      const el = windowRef.current;
+      if (!el) return;
+
+      Draggable.create(el, { onPress: () => focusWindow(windowKey) });
+    }, []);
 
     useLayoutEffect(() => {
       const el = windowRef.current;
