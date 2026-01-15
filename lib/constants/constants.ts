@@ -408,7 +408,7 @@ const WELCOME_PAGE_FONT_WEIGHTS: WELCOME_PAGE_FONT_WEIGHTS_TYPE = {
 const INITIAL_Z_INDEX: number = 1000;
 
 const WINDOW_CONFIG = {
-  finder: { isOpen: true, zIndex: INITIAL_Z_INDEX, data: null },
+  finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
