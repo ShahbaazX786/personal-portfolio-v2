@@ -20,7 +20,11 @@ const Navbar = () => {
         <p className="font-bold">Shahbaaz&apos;s Portfolio</p>
         <ul>
           {NavbarMenu.map(({ id, name, type }) => (
-            <li key={id} onClick={() => openWindow(type as WindowKey)}>
+            <li
+              key={id}
+              className="hover:scale-110 transition-all ease-in-out font-semibold"
+              onClick={() => openWindow(type as WindowKey)}
+            >
               <p>{name}</p>
             </li>
           ))}
