@@ -4,6 +4,7 @@ import BottomDock from "@/components/layout/BottomDock";
 import Navbar from "@/components/layout/Navbar";
 import Welcome from "@/components/Welcome";
 import CommandCLI from "@/components/windows/cmd";
+import FinderWindow from "@/components/windows/Finder";
 import ResumeWindow from "@/components/windows/Resume";
 import SafariWindow from "@/components/windows/SafariBrowser";
 import gsap from "gsap";
@@ -22,6 +23,7 @@ export default function Home() {
       <CommandCLI />
       <SafariWindow />
       <ResumeWindow />
+      <FinderWindow />
     </main>
   );
 }
