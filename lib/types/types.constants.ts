@@ -29,9 +29,30 @@ type FontWeightRange = {
   default: number;
 };
 
+type LocationType = {
+  id: number;
+  type: string;
+  name: string;
+  icon: string;
+  kind: string;
+  children: LocationChildrenType[];
+};
+
+type LocationChildrenType = {
+  id: number;
+  name: string;
+  icon: string;
+  kind: string;
+  position: string;
+  windowPosition: string;
+  children: any;
+};
+
 export type {
   DockAppType,
   NavbarMenuType,
   NavIconsType,
+  LocationType,
+  LocationChildrenType,
   WELCOME_PAGE_FONT_WEIGHTS_TYPE,
 };
