@@ -1,6 +1,7 @@
 "use client";
 
-import { DockApps } from "@/lib/constants/constants";
+import { DockApps, locations } from "@/lib/constants/constants";
+import useLocationStore from "@/store/location.store";
 import { WindowKey } from "@/store/types/window.store.type";
 import useWindowStore from "@/store/window.store";
 import { useGSAP } from "@gsap/react";
@@ -12,6 +13,7 @@ import { Tooltip } from "react-tooltip";
 const BottomDock = () => {
   const dockRef = useRef<null | HTMLDivElement>(null);
   const { openWindow, closeWindow, windows } = useWindowStore();
+  const { setActiveLocation, resetActiveLocation } = useLocationStore();
 
   useGSAP(() => {
     const dock = dockRef.current;
@@ -67,6 +69,9 @@ const BottomDock = () => {
   const toggleApp = (app: { id: WindowKey; canOpen: boolean }) => {
     if (!app.canOpen) return;
 
+    const isTrash = app.id === "trash";
+    if (isTrash) app.id = "finder";
+
     const window = windows[app.id];
 
     if (!window) {
@@ -76,8 +81,12 @@ const BottomDock = () => {
 
     if (window.isOpen) {
       closeWindow(app.id);
+      resetActiveLocation();
     } else {
       openWindow(app.id);
+      if (isTrash) {
+        setActiveLocation(locations.trash);
+      }
     }
   };
 
