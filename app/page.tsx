@@ -8,11 +8,15 @@ import CommandCLI from "@/components/windows/cmd";
 import ContactWindow from "@/components/windows/Contact";
 import FinderWindow from "@/components/windows/Finder";
 import ImageWindow from "@/components/windows/Image";
-import ResumeWindow from "@/components/windows/Resume";
 import SafariWindow from "@/components/windows/SafariBrowser";
 import TextWindow from "@/components/windows/Text";
 import gsap from "gsap";
 import { Draggable } from "gsap/all";
+import dynamic from "next/dynamic";
+
+const ResumeWindow = dynamic(() => import("@/components/windows/Resume"), {
+  ssr: false,
+});
 
 gsap.registerPlugin(Draggable);
 
