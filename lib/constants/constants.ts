@@ -391,6 +391,53 @@ const TRASH_LOCATION = {
   ],
 };
 
+const photosLinks = [
+  {
+    id: 1,
+    icon: "/icons/gicon1.svg",
+    title: "Library",
+  },
+  {
+    id: 2,
+    icon: "/icons/gicon2.svg",
+    title: "Memories",
+  },
+  {
+    id: 3,
+    icon: "/icons/file.svg",
+    title: "Places",
+  },
+  {
+    id: 4,
+    icon: "/icons/gicon4.svg",
+    title: "People",
+  },
+  {
+    id: 5,
+    icon: "/icons/gicon5.svg",
+    title: "Favorites",
+  },
+];
+
+const gallery = [
+  {
+    id: 1,
+    img: "/images/me.jpg",
+  },
+  {
+    id: 2,
+    img: "/images/conference-me.gif",
+  },
+  {
+    id: 3,
+    img: "/images/casual-me.jpg",
+  },
+  {
+    id: 4,
+    img: "/images/me.jpg",
+  },
+];
+
 const locations = {
   work: WORK_LOCATION,
   about: ABOUT_LOCATION,
@@ -398,7 +445,16 @@ const locations = {
   trash: TRASH_LOCATION,
 };
 
-export { DockApps, NavbarMenu, NavIcons, TechStack, BlogPosts, locations };
+export {
+  DockApps,
+  NavbarMenu,
+  NavIcons,
+  TechStack,
+  BlogPosts,
+  locations,
+  photosLinks,
+  gallery,
+};
 
 const WELCOME_PAGE_FONT_WEIGHTS: WELCOME_PAGE_FONT_WEIGHTS_TYPE = {
   subtitle: { min: 100, max: 400, default: 100 },
