@@ -7,6 +7,7 @@ import Welcome from "@/components/Welcome";
 import CommandCLI from "@/components/windows/cmd";
 import ContactWindow from "@/components/windows/Contact";
 import FinderWindow from "@/components/windows/Finder";
+import GalleryWindow from "@/components/windows/Gallery";
 import ImageWindow from "@/components/windows/Image";
 import SafariWindow from "@/components/windows/SafariBrowser";
 import TextWindow from "@/components/windows/Text";
@@ -34,6 +35,7 @@ export default function Home() {
       <TextWindow />
       <ImageWindow />
       <ContactWindow />
+      <GalleryWindow />
       <HomeIcons />
     </main>
   );
