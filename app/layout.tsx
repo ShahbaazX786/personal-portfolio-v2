@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Georama, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/layout/Navbar";
+import BottomDock from "@/components/layout/BottomDock";
 
 const geoSans = Georama({
   variable: "--font-georama",
@@ -28,7 +30,9 @@ export default function RootLayout({
       <body
         className={`${geoSans.variable} ${robotoMono.variable} antialiased`}
       >
+        <Navbar />
         {children}
+        <BottomDock />
       </body>
     </html>
   );

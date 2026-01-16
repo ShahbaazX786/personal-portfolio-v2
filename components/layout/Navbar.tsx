@@ -1,3 +1,5 @@
+"use client";
+
 import { NavbarMenu, NavIcons } from "@/lib/constants/constants";
 import { WindowKey } from "@/store/types/window.store.type";
 import useWindowStore from "@/store/window.store";
