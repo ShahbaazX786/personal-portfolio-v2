@@ -141,7 +141,7 @@ const BlogPosts = [
 ];
 
 const WORK_LOCATION: LocationType = {
-  id: 1,
+  id: "work-location",
   type: "work",
   name: "Work",
   icon: "/icons/work.svg",
@@ -149,12 +149,12 @@ const WORK_LOCATION: LocationType = {
   children: [
     // Project 1
     {
-      id: 1,
+      id: "proj-1",
       name: ProjectData.web.globotalk.title,
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-5 left-0",
-      windowPosition: "top-[5vh] left-5",
+      windowPosition: "top-5 left-5",
       children: [
         {
           id: 1,
@@ -197,12 +197,12 @@ const WORK_LOCATION: LocationType = {
 
     // ▶ Project 2
     {
-      id: 2,
+      id: "proj-2",
       name: ProjectData.web.mediaai.title,
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-5 left-30",
-      windowPosition: "top-5 left-0",
+      windowPosition: "top-5 left-24",
       children: [
         {
           id: 1,
@@ -245,12 +245,12 @@ const WORK_LOCATION: LocationType = {
 
     // ▶ Project 3
     {
-      id: 3,
+      id: "proj-3",
       name: ProjectData.web.carhuz.title,
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-5 left-60",
-      windowPosition: "top-[33vh] left-7",
+      windowPosition: "top-5 left-40",
       children: [
         {
           id: 1,
@@ -294,14 +294,14 @@ const WORK_LOCATION: LocationType = {
 };
 
 const ABOUT_LOCATION = {
-  id: 2,
+  id: "about",
   type: "about",
   name: "About me",
   icon: "/icons/info.svg",
   kind: "folder",
   children: [
     {
-      id: 1,
+      id: "about-item-1",
       name: "me.png",
       icon: "/images/image.png",
       kind: "file",
@@ -310,7 +310,7 @@ const ABOUT_LOCATION = {
       imageUrl: "/images/me.jpg",
     },
     {
-      id: 2,
+      id: "about-item-2",
       name: "casual-me.png",
       icon: "/images/image.png",
       kind: "file",
@@ -319,7 +319,7 @@ const ABOUT_LOCATION = {
       imageUrl: "/images/casual-me.jpg",
     },
     {
-      id: 3,
+      id: "about-item-3",
       name: "conference-me.gif",
       icon: "/images/image.png",
       kind: "file",
@@ -328,7 +328,7 @@ const ABOUT_LOCATION = {
       imageUrl: "/images/conference-me.gif",
     },
     {
-      id: 4,
+      id: "about-item-4",
       name: "about-me.txt",
       icon: "/images/txt.png",
       kind: "file",
@@ -347,14 +347,14 @@ const ABOUT_LOCATION = {
 };
 
 const RESUME_LOCATION = {
-  id: 3,
+  id: "resume-location",
   type: "resume",
   name: "Resume",
   icon: "/icons/file.svg",
   kind: "folder",
   children: [
     {
-      id: 1,
+      id: "resume-v1",
       name: "Resume.pdf",
       icon: "/images/pdf.png",
       kind: "file",
@@ -364,14 +364,14 @@ const RESUME_LOCATION = {
 };
 
 const TRASH_LOCATION = {
-  id: 4,
+  id: "trash-location",
   type: "trash",
   name: "Trash",
   icon: "/icons/trash.svg",
   kind: "folder",
   children: [
     {
-      id: 1,
+      id: "trash-item-1",
       name: "trash1.png",
       icon: "/images/image.png",
       kind: "file",
@@ -380,7 +380,7 @@ const TRASH_LOCATION = {
       imageUrl: "/images/trash-1.png",
     },
     {
-      id: 2,
+      id: "trash-item-2",
       name: "trash2.jpg",
       icon: "/images/image.png",
       kind: "file",

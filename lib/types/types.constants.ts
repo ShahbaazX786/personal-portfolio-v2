@@ -30,7 +30,7 @@ type FontWeightRange = {
 };
 
 type LocationType = {
-  id: number;
+  id: string;
   type: string;
   name: string;
   icon: string;
@@ -39,7 +39,7 @@ type LocationType = {
 };
 
 type LocationChildrenType = {
-  id: number;
+  id: string;
   name: string;
   icon: string;
   kind: string;
