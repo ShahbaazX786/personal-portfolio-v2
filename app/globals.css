@@ -3,12 +3,16 @@
 
 @custom-variant dark (&:is(.dark *));
 
+:root{
+  --wallpaper: url("/images/default_wallpaper.png");
+}
+
 html,
 body {
   width: 100dvw;
   overflow: hidden;
   height: 100dvh;
-  background-image: url("/images/default_wallpaper.png");
+  background-image: var(--wallpaper);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
