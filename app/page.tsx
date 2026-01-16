@@ -1,5 +1,6 @@
 "use client";
 
+import HomeIcons from "@/components/HomeIcons";
 import BottomDock from "@/components/layout/BottomDock";
 import Navbar from "@/components/layout/Navbar";
 import Welcome from "@/components/Welcome";
@@ -22,7 +23,6 @@ export default function Home() {
       <Navbar />
       <Welcome />
       <BottomDock />
-
       <CommandCLI />
       <SafariWindow />
       <ResumeWindow />
@@ -30,6 +30,7 @@ export default function Home() {
       <TextWindow />
       <ImageWindow />
       <ContactWindow />
+      <HomeIcons />
     </main>
   );
 }
