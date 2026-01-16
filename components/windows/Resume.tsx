@@ -1,16 +1,16 @@
+"use client";
+
+import { Download } from "lucide-react";
 import Link from "next/link";
+import { Document, Page, pdfjs } from "react-pdf";
 import WindowWrapper from "../wrappers/WindowWrapper";
 import WindowControls from "./WindowControls";
-import { Download } from "lucide-react";
-import { Document, Page, pdfjs } from "react-pdf";
 
-import "react-pdf/dist/Page/TextLayer.css";
+import { getPDFjsURL } from "@/lib/helpers/helpers";
 import "react-pdf/dist/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/TextLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url
-).toString();
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(getPDFjsURL()).toString();
 
 const Resume = () => {
   return (
