@@ -382,7 +382,7 @@ body {
     }
   }
 
-  #home {
+  #desktop-icon {
     @apply relative z-0 max-sm:hidden;
 
     ul {

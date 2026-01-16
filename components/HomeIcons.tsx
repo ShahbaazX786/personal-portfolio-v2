@@ -46,7 +46,7 @@ const HomeIcons = () => {
   };
 
   return (
-    <section id="home-icons">
+    <section id="desktop-icon">
       <ul>
         {projects.map((project) => (
           <li
