@@ -15,6 +15,7 @@ import { socials } from "@/lib/constants/SocialConstants";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
+import CustomMessage from "../CustomMessage";
 
 const CustomContextMenu = () => {
   const { resetWallpaper, changeWallpaper } = useWallpaper();
@@ -94,9 +95,14 @@ const CustomContextMenu = () => {
                 </Link>
               ))}
               <ContextMenuSeparator />
-              <ContextMenuItem variant="destructive">
-                Custom Message{" "}
-              </ContextMenuItem>
+
+              <CustomMessage
+                trigger={
+                  <ContextMenuItem onSelect={() => {}} variant="destructive">
+                    Custom Message
+                  </ContextMenuItem>
+                }
+              />
             </ContextMenuSubContent>
           </ContextMenuSub>
         </ContextMenuContent>
