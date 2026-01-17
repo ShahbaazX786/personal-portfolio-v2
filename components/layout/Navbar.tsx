@@ -49,17 +49,15 @@ const Navbar = () => {
       <div>
         <ul>
           {NavIcons.map(({ id, img }) => (
-            <>
-              <li key={id}>
-                <Image
-                  src={img}
-                  className="size-4 icon-hover"
-                  alt={`icon-${id}`}
-                  width={100}
-                  height={100}
-                />
-              </li>
-            </>
+            <li key={id}>
+              <Image
+                src={img}
+                className="size-4 icon-hover"
+                alt={`icon-${id}`}
+                width={100}
+                height={100}
+              />
+            </li>
           ))}
           <li key={"calender-view"}>
             <Popover>
