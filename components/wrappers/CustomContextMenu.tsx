@@ -14,7 +14,9 @@ import {
   ContextMenuTrigger,
 } from "@/components/ui/context-menu";
 import { useWallpaper } from "@/hooks/useWallpaper";
+import { socials } from "@/lib/constants/SocialConstants";
 import Image from "next/image";
+import Link from "next/link";
 
 const CustomContextMenu = () => {
   const { resetWallpaper, changeWallpaper } = useWallpaper();
@@ -55,68 +57,37 @@ const CustomContextMenu = () => {
           <ContextMenuSub>
             <ContextMenuSubTrigger inset>My Socials</ContextMenuSubTrigger>
             <ContextMenuSubContent className="w-44">
-              <ContextMenuItem>
-                LinkedIn
-                <ContextMenuShortcut>
-                  <Image
-                    src={"/icons/social/linkedin.svg"}
-                    alt="LinkedIn"
-                    width={100}
-                    height={100}
-                    className="size-5"
-                  />
-                </ContextMenuShortcut>
-              </ContextMenuItem>
-              <ContextMenuItem>
-                Twitter (X)
-                <ContextMenuShortcut>
-                  <Image
-                    src={"/icons/social/twitter.svg"}
-                    alt="Twitter"
-                    width={100}
-                    height={100}
-                    className="size-5"
-                  />
-                </ContextMenuShortcut>
-              </ContextMenuItem>
-              <ContextMenuItem>
-                Github
-                <ContextMenuShortcut>
-                  <Image
-                    src={"/icons/social/github.svg"}
-                    alt="Twitter"
-                    width={100}
-                    height={100}
-                    className="size-5"
-                  />
-                </ContextMenuShortcut>
-              </ContextMenuItem>
-              <ContextMenuSeparator />
-              <ContextMenuItem>
-                Email Directly
-                <ContextMenuShortcut>
-                  <Image
-                    src={"/icons/social/gmail.svg"}
-                    alt="Twitter"
-                    width={100}
-                    height={100}
-                    className="size-5"
-                  />
-                </ContextMenuShortcut>
-              </ContextMenuItem>
+              {socials.map((item) => (
+                <Link
+                  key={item.id}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer"
+                >
+                  {item.text === "Email" && <ContextMenuSeparator />}
+                  <ContextMenuItem className="cursor-pointer">
+                    {item.text === "Email"
+                      ? item.text + " " + "Directly"
+                      : item.text}
+                    <ContextMenuShortcut>
+                      <Image
+                        src={item.icon}
+                        alt="LinkedIn"
+                        width={100}
+                        height={100}
+                        className="size-5"
+                      />
+                    </ContextMenuShortcut>
+                  </ContextMenuItem>
+                </Link>
+              ))}
               <ContextMenuSeparator />
               <ContextMenuItem variant="destructive">
                 Custom Message{" "}
               </ContextMenuItem>
             </ContextMenuSubContent>
           </ContextMenuSub>
-          <ContextMenuRadioGroup value="pedro">
-            <ContextMenuLabel inset>People</ContextMenuLabel>
-            <ContextMenuRadioItem value="pedro">
-              Pedro Duarte
-            </ContextMenuRadioItem>
-            <ContextMenuRadioItem value="colm">Colm Tuite</ContextMenuRadioItem>
-          </ContextMenuRadioGroup>
         </ContextMenuContent>
       </ContextMenu>
     </section>
