@@ -84,7 +84,7 @@ const DockApps: DockAppType[] = [
     id: "trash",
     name: "Archive",
     icon: "trash.png",
-    canOpen: false,
+    canOpen: true,
   },
 ];
 

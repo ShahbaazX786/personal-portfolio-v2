@@ -61,7 +61,7 @@ const HomeIcons = () => {
               height={100}
               className="w-14"
             />
-            <p className="dark:text-white text-black text-sm">{project.name}</p>
+            <p className="text-sm">{project.name}</p>
           </li>
         ))}
       </ul>
