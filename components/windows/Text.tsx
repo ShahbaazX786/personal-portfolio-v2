@@ -5,7 +5,7 @@ import WindowControls from "./WindowControls";
 
 const Text = () => {
   const { windows } = useWindowStore();
-  const data = windows.txtfile.data;
+  const data: any = windows.txtfile.data;
   if (!data) return null;
   const { name, image, subtitle, description } = data;
 

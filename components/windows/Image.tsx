@@ -5,7 +5,7 @@ import WindowControls from "./WindowControls";
 
 const ImageComponent = () => {
   const { windows } = useWindowStore();
-  const data = windows.imgfile?.data;
+  const data: any = windows.imgfile?.data;
 
   if (!data) return null;
 
