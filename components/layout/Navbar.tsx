@@ -1,27 +1,38 @@
 "use client";
 
+import useTextAnimator from "@/hooks/useTextAnimator";
 import { NavbarMenu, NavIcons } from "@/lib/constants/constants";
+import { socials } from "@/lib/constants/SocialConstants";
+import { renderText } from "@/lib/helpers/component-helpers";
 import { WindowKey } from "@/store/types/window.store.type";
 import useWindowStore from "@/store/window.store";
 import dayjs from "dayjs";
 import Image from "next/image";
+import Link from "next/link";
+import { useRef } from "react";
 import { Calendar } from "../ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 
 const Navbar = () => {
   const { openWindow } = useWindowStore();
 
+  const BrandNameRef = useRef<HTMLParagraphElement | null>(null);
+  useTextAnimator(BrandNameRef as any, {
+    type: "color",
+    from: "#000000",
+    to: "#FFFFFF",
+    base: "#000000",
+    intensity: 1000,
+  });
+
   return (
     <nav>
       <div>
-        <Image
-          src={"/icons/logo.svg"}
-          alt="Apple Logo"
-          width={100}
-          height={100}
-          className="size-4"
-        />
-        <p className="font-bold">Shahbaaz&apos;s Portfolio</p>
+        <Link href={socials[3].link} target="_blank" rel="noopener noreferrer">
+          <p className="font-bold" ref={BrandNameRef}>
+            {renderText("Shaik Shahbaaz Alam", "text-lg font-georama", 500)}
+          </p>
+        </Link>
         <ul>
           {NavbarMenu.map(({ id, name, type }) => (
             <li
@@ -50,7 +61,7 @@ const Navbar = () => {
               </li>
             </>
           ))}
-          <li>
+          <li key={"calender-view"}>
             <Popover>
               <PopoverTrigger
                 asChild
