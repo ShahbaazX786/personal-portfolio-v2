@@ -3,9 +3,6 @@ import {
   ContextMenuCheckboxItem,
   ContextMenuContent,
   ContextMenuItem,
-  ContextMenuLabel,
-  ContextMenuRadioGroup,
-  ContextMenuRadioItem,
   ContextMenuSeparator,
   ContextMenuShortcut,
   ContextMenuSub,
@@ -15,11 +12,14 @@ import {
 } from "@/components/ui/context-menu";
 import { useWallpaper } from "@/hooks/useWallpaper";
 import { socials } from "@/lib/constants/SocialConstants";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 
 const CustomContextMenu = () => {
   const { resetWallpaper, changeWallpaper } = useWallpaper();
+  const { setTheme, theme } = useTheme();
+
   const refreshPage = () => {
     window.location.reload();
   };
@@ -32,7 +32,8 @@ const CustomContextMenu = () => {
             inset
             className="bg-green-400 hover:bg-green-200 cursor-pointer"
           >
-            Check these out 👇
+            Check these out{" "}
+            <ContextMenuShortcut className="text-lg">👇</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuItem
             inset
@@ -40,19 +41,29 @@ const CustomContextMenu = () => {
             className="cursor-pointer"
           >
             Change Wallpaper
+            <ContextMenuShortcut className="text-lg">➡️</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuItem inset onClick={resetWallpaper}>
-            Reset Wallpaper 😤
+            Reset Wallpaper
+            <ContextMenuShortcut className="text-lg">🔄️</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuItem inset onClick={refreshPage}>
             Reload
             <ContextMenuShortcut>⌘R</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuSeparator />
-          <ContextMenuCheckboxItem checked>
-            Show Bookmarks
+          <ContextMenuCheckboxItem
+            checked={theme === "light"}
+            onClick={() => setTheme("light")}
+          >
+            Enable Light Mode
           </ContextMenuCheckboxItem>
-          <ContextMenuCheckboxItem>Show Full URLs</ContextMenuCheckboxItem>
+          <ContextMenuCheckboxItem
+            checked={theme === "dark"}
+            onClick={() => setTheme("dark")}
+          >
+            Enable Dark Mode
+          </ContextMenuCheckboxItem>
           <ContextMenuSeparator />
           <ContextMenuSub>
             <ContextMenuSubTrigger inset>My Socials</ContextMenuSubTrigger>
