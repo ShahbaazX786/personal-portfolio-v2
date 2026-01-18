@@ -24,7 +24,7 @@ const Finder = () => {
 
   const renderList = (
     title: string,
-    items: typeof Locations | typeof ProjectWork
+    items: typeof Locations | typeof ProjectWork,
   ) => {
     return (
       <div>
@@ -35,7 +35,7 @@ const Finder = () => {
               key={item.id}
               onClick={() => setActiveLocation(item)}
               className={clsx(
-                item.id === activeLocation.id ? "active" : "not-active"
+                item.id === activeLocation.id ? "active" : "not-active",
               )}
             >
               <Image
@@ -55,7 +55,7 @@ const Finder = () => {
 
   return (
     <>
-      <div id="window-header">
+      <div className="window-header finder-header">
         <WindowControls target="finder" />
         <Search className="icon" />
       </div>

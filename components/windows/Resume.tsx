@@ -15,7 +15,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(getPDFjsURL()).toString();
 const Resume = () => {
   return (
     <>
-      <div id="window-header">
+      <div className="window-header resume-header">
         <WindowControls target="resume" />
         <h2>Shaik Mohammad Shahbaaz&apos;s Resume.pdf</h2>
 

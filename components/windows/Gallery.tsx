@@ -10,7 +10,7 @@ const Gallery = () => {
 
   return (
     <>
-      <div id="window-header">
+      <div className="window-header photos-header">
         <WindowControls target="photos" />
         <div className="w-full flex justify-end items-center gap-3 text-gray-500">
           <Mail className="icon" />

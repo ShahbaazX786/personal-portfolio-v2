@@ -6,7 +6,7 @@ import WindowControls from "./WindowControls";
 const CommandCLI = () => {
   return (
     <>
-      <div id="window-header">
+      <div className={`window-header terminal-header`}>
         <WindowControls target={"terminal"} />
         <h2>Command Line Interface</h2>
       </div>

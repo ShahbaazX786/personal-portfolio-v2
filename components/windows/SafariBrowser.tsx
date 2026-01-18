@@ -18,7 +18,7 @@ import WindowControls from "./WindowControls";
 const SafariBrowser = () => {
   return (
     <>
-      <div id="window-header">
+      <div className="window-header safari-header">
         <WindowControls target="safari" />
 
         <PanelLeft className="ml-10 icon" />
