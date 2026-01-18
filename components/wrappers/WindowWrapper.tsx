@@ -7,7 +7,7 @@ import React, { useLayoutEffect, useRef } from "react";
 
 const WindowWrapper = <P extends object>(
   Component: React.ComponentType<P>,
-  windowKey: WindowKey
+  windowKey: WindowKey,
 ) => {
   const Wrapped = (props: P) => {
     const windowRef = useRef<HTMLDivElement | null>(null);
@@ -25,7 +25,7 @@ const WindowWrapper = <P extends object>(
       gsap.fromTo(
         el,
         { scale: 0.8, opacity: 0, y: 40 },
-        { scale: 1, opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }
+        { scale: 1, opacity: 1, y: 0, duration: 0.5, ease: "power3.out" },
       );
     }, [isOpen]);
 
@@ -34,8 +34,14 @@ const WindowWrapper = <P extends object>(
       const el = windowRef.current;
       if (!el) return;
 
-      Draggable.create(el, { onPress: () => focusWindow(windowKey) });
-    }, []);
+      const header = el.querySelector(`.${windowKey}-header`);
+      if (!header) return;
+
+      Draggable.create(el, {
+        handle: header,
+        onPress: () => focusWindow(windowKey),
+      });
+    }, [windows[windowKey].isOpen]);
 
     useLayoutEffect(() => {
       const el = windowRef.current;
