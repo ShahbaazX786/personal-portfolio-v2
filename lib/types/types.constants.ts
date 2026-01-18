@@ -18,17 +18,6 @@ type DockAppType = {
   canOpen: boolean;
 };
 
-type WELCOME_PAGE_FONT_WEIGHTS_TYPE = {
-  title: FontWeightRange;
-  subtitle: FontWeightRange;
-};
-
-type FontWeightRange = {
-  min: number;
-  max: number;
-  default: number;
-};
-
 type LocationType = {
   id: string;
   type: string;
@@ -50,9 +39,8 @@ type LocationChildrenType = {
 
 export type {
   DockAppType,
+  LocationChildrenType,
+  LocationType,
   NavbarMenuType,
   NavIconsType,
-  LocationType,
-  LocationChildrenType,
-  WELCOME_PAGE_FONT_WEIGHTS_TYPE,
 };

@@ -25,6 +25,6 @@ export const socials = [
     text: "Email",
     icon: "/icons/social/gmail.svg",
     bg: "#4bcb63",
-    link: "emailto:shahbaazalam78@gmail.com",
+    link: "mailto:shahbaazalam78@gmail.com",
   },
 ] as const;
