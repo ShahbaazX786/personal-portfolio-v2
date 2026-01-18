@@ -3,6 +3,7 @@
 import useTextAnimator from "@/hooks/useTextAnimator";
 import { renderText } from "@/lib/helpers/component-helpers";
 import { useRef } from "react";
+import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 
 const Welcome = () => {
   const titleRef = useRef(null);
@@ -30,7 +31,7 @@ const Welcome = () => {
         {renderText(
           "Hey, I'm Shahbaaz! Welcome to my",
           "text-3xl font-georama",
-          100
+          100,
         )}
       </p>
 
@@ -38,11 +39,23 @@ const Welcome = () => {
         {renderText("portfolio", "text-9xl italic font-georama", 400)}
       </h1>
 
-      <div className="small-screen">
-        <p>
-          This portfolio is more enjoyable for Desktop / Tablet screens Bruh!
-        </p>
-        <p>Just open it in yo PC man!</p>
+      <div className="sm:hidden small-screen w-full h-full flex justify-center items-center z-50">
+        <Alert variant="destructive">
+          {/* <Terminal /> */}
+          <AlertTitle className="font-bold text-lg">Heads up!</AlertTitle>
+          <AlertDescription className="text-base">
+            <ol className="pl-4">
+              <li className="list-disc">
+                This portfolio is more enjoyable on{" "}
+                <strong>Desktop / Tablet</strong> screens Bruh!
+              </li>
+              <li className="list-disc">
+                So either use <strong>bigger devices</strong> or turn on{" "}
+                <strong>desktop view</strong> in your mobile browser.
+              </li>
+            </ol>
+          </AlertDescription>
+        </Alert>
       </div>
     </section>
   );
