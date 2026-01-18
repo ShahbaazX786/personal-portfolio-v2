@@ -1,7 +1,7 @@
 import { WindowKey } from "@/store/types/window.store.type";
 
 type NavIconsType = {
-  id: number;
+  id: string;
   img: string;
 };
 

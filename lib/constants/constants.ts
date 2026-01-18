@@ -31,19 +31,19 @@ const NavbarMenu: NavbarMenuType[] = [
 
 const NavIcons: NavIconsType[] = [
   {
-    id: 1,
+    id: "wifi",
     img: "/icons/wifi.svg",
   },
   {
-    id: 2,
+    id: "search",
     img: "/icons/search.svg",
   },
   {
-    id: 3,
+    id: "author",
     img: "/icons/user.svg",
   },
   {
-    id: 4,
+    id: "mode",
     img: "/icons/mode.svg",
   },
 ] as const;
