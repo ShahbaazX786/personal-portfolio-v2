@@ -53,7 +53,7 @@ const WindowWrapper = <P extends object>(
       <section
         id={windowKey}
         ref={windowRef}
-        style={{ zIndex }}
+        style={{ zIndex, display: isOpen ? "block" : "none" }}
         className="absolute"
       >
         <Component {...props} />
