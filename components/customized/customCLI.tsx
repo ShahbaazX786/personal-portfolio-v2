@@ -21,7 +21,7 @@ type Line = {
 
 let lineId = 0;
 
-const TYPING_SPEED = 18;
+const TYPING_SPEED = 5;
 
 const CustomCLI = ({
   commands,
