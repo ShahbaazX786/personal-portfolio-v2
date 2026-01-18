@@ -6,7 +6,7 @@ import WindowControls from "./WindowControls";
 const CommandCLI = () => {
   return (
     <>
-      <div className={`window-header terminal-header`}>
+      <div className="window-header terminal-header">
         <WindowControls target={"terminal"} />
         <h2>Command Line Interface</h2>
       </div>
@@ -14,7 +14,7 @@ const CommandCLI = () => {
       <section tabIndex={1}>
         <CustomCLI
           welcomeMessage="Welcome Visitor...  use command 'help' to find more"
-          prompt=">>> trav@mac:"
+          prompt="shahbaaz@site:~$"
           commands={cliCommands}
         />
       </section>

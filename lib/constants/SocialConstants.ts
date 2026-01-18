@@ -18,7 +18,7 @@ export const socials = [
     text: "Twitter",
     icon: "/icons/social/twitter.svg",
     bg: "#ff866b",
-    link: "#",
+    link: "https://x.com/shahbaazx24",
   },
   {
     id: 4,
