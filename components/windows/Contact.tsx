@@ -9,23 +9,25 @@ const Contact = () => {
     <>
       <div className="window-header contact-header">
         <WindowControls target="contact" />
-        <h2>Contact Me</h2>
+        <h2 className="text-black">Contact Me</h2>
       </div>
 
       <div className="p-5 space-y-5">
         <Image
-          src={"/images/conference-me.gif"}
-          alt="Shaik Shahbaaz Alam"
-          className="w-80 rounded-full mx-auto"
+          src={"/animated-images/hello.gif"}
+          alt="random"
+          className="w-48 rounded-lg mx-auto"
           width={100}
           height={100}
         />
 
-        <h3>Let&apos;s Connect</h3>
+        <h3>Want to talk more?</h3>
         <p>
-          Got an idea? A bug to squash? or just wanna talk tech? I&apos;m in
+          I may not be able to talk ASAP but i will be notified if you give me a
+          follow!
         </p>
 
+        <h4 className="font-bold text-lg">Socials 👇</h4>
         <ul>
           {socials.map((social) => (
             <li key={social.id} style={{ backgroundColor: social.bg }}>
@@ -34,15 +36,16 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={social.text}
+                className="flex flex-col justify-center items-center"
               >
                 <Image
                   src={social.icon}
                   alt={social.text}
-                  className="size-5"
+                  className="size-14"
                   width={100}
                   height={100}
                 />
-                <p>{social.text}</p>
+                <p className="text-lg -mt-4">{social.text}</p>
               </Link>
             </li>
           ))}
