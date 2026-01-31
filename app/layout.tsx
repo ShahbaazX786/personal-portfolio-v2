@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Georama, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
+import Navbar from "@/components/layout/Navbar/Navbar";
 import BottomDock from "@/components/layout/BottomDock";
 import { ThemeProvider } from "@/components/wrappers/ThemeProvider";
 
