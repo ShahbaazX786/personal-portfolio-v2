@@ -15,11 +15,14 @@ import { useRef } from "react";
 import { Tooltip } from "react-tooltip";
 import { Calendar } from "../ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { getDayTime } from "@/lib/utils";
 
 const Navbar = () => {
   const { openWindow } = useWindowStore();
   const { setActiveLocation } = useLocationStore();
   const { setTheme } = useTheme();
+  const today = dayjs().format("ddd MMM D h:mm A");
+  const { date, time } = getDayTime(today);
 
   const BrandNameRef = useRef<HTMLParagraphElement | null>(null);
 
@@ -99,8 +102,9 @@ const Navbar = () => {
                 asChild
                 className="hover:scale-110 transition-all ease-in-out"
               >
-                <time className="cursor-pointer max-w-20 ">
-                  {dayjs().format("ddd MMM D h:mm A")}
+                <time className="cursor-pointer md:max-w-full max-w-20 w-auto lg:w-full gap-0 md:gap-2 flex lg:flex-row flex-col justify-center items-center text-xs lg:text-sm">
+                  <span>{date}</span>
+                  <span>{time}</span>
                 </time>
               </PopoverTrigger>
               <PopoverContent
