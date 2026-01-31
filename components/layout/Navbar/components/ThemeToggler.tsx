@@ -30,16 +30,14 @@ const ThemeToggler = ({ id, img }: { id: string; img: string }) => {
       <PopoverContent className="w-44">
         <PopoverHeader>
           <PopoverTitle>Change Theme?</PopoverTitle>
-          <PopoverDescription>
-            <div className="flex w-full justify-center items-center gap-2 mt-2">
-              <Button disabled={theme === "light"} onClick={handleThemeToggle}>
-                Light
-              </Button>
-              <Button disabled={theme === "dark"} onClick={handleThemeToggle}>
-                Dark
-              </Button>
-            </div>
-          </PopoverDescription>
+          <div className="flex w-full justify-center items-center gap-2 mt-2">
+            <Button disabled={theme === "light"} onClick={handleThemeToggle}>
+              Light
+            </Button>
+            <Button disabled={theme === "dark"} onClick={handleThemeToggle}>
+              Dark
+            </Button>
+          </div>
         </PopoverHeader>
       </PopoverContent>
     </Popover>
