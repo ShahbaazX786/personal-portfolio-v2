@@ -469,4 +469,6 @@ const WINDOW_CONFIG = {
   trash: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 } as const;
 
-export { INITIAL_Z_INDEX, WINDOW_CONFIG };
+const DEFAULT_DATE_TIME_FORMAT = "DD-MM-YYYY hh:mm A";
+
+export { INITIAL_Z_INDEX, WINDOW_CONFIG, DEFAULT_DATE_TIME_FORMAT };

@@ -28,3 +28,14 @@ export const socials = [
     link: "mailto:shahbaazalam78@gmail.com",
   },
 ] as const;
+
+export const blogs = [
+  {
+    id: "dev.to",
+    text: "Dev.to",
+    icon: "/icons/dev.to.svg",
+    bg: "#1b0527",
+    link: "https://dev.to/shahbaazx786",
+  },
+  {},
+];
