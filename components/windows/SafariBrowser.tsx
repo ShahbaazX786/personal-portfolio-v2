@@ -1,4 +1,7 @@
-import { BlogPosts } from "@/lib/constants/constants";
+import { useBlogPosts } from "@/hooks/useBlogPosts";
+import { DEFAULT_DATE_TIME_FORMAT } from "@/lib/constants/constants";
+import { blogs } from "@/lib/constants/SocialConstants";
+import dayjs from "dayjs";
 import {
   ChevronLeft,
   ChevronRight,
@@ -16,6 +19,8 @@ import WindowWrapper from "../wrappers/WindowWrapper";
 import WindowControls from "./WindowControls";
 
 const SafariBrowser = () => {
+  const { posts } = useBlogPosts();
+
   return (
     <>
       <div className="window-header safari-header">
@@ -47,18 +52,48 @@ const SafariBrowser = () => {
         </div>
       </div>
 
-      <div className="blog">
-        <h2>My Developer Blog</h2>
+      <div className="blog w-screen h-120 overflow-y-auto scrollbar-hide">
+        <h2>Top Places where I write Blogs:</h2>
+        <div className="flex flex-row justify-start items-center mb-4 gap-4">
+          <Link
+            href={blogs[0].link!}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer"
+          >
+            <Image
+              src={"/icons/dev.to.svg"}
+              alt="Dev.to"
+              width={100}
+              height={100}
+              className="size-24"
+            />
+          </Link>
+        </div>
+        <h2>Recent Blogs 👇</h2>
         <div className="space-y-8">
-          {BlogPosts.map(({ id, image, title, date, link }) => (
-            <div key={id} className="blog-post">
+          {posts.map((post) => (
+            <div key={post.id} className="blog-post">
               <div className="col-span-2">
-                <Image src={image} alt={title} width={100} height={100} />
+                <Image
+                  src={post.cover_image!}
+                  alt={post.title}
+                  width={100}
+                  height={100}
+                  className="border shadow-lg"
+                />
               </div>
               <div className="content">
-                <p>{date}</p>
-                <h3>{title}</h3>
-                <Link href={link} target="_blank" rel="noopener noreferrer">
+                <p className="font-semibold">
+                  {dayjs(post.published_at).format(DEFAULT_DATE_TIME_FORMAT)}
+                </p>
+                <h3 className="text-lg">{post.title}</h3>
+                <Link
+                  href={post.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-base"
+                >
                   Check out the full post
                   <MoveRight className="icon-hover" />
                 </Link>
