@@ -14,13 +14,21 @@ import Link from "next/link";
 import { useRef } from "react";
 import { Tooltip } from "react-tooltip";
 import { Calendar } from "../ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverDescription,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverTrigger,
+} from "../ui/popover";
 import { getDayTime } from "@/lib/utils";
+import { Button } from "../ui/button";
 
 const Navbar = () => {
   const { openWindow } = useWindowStore();
   const { setActiveLocation } = useLocationStore();
-  const { setTheme } = useTheme();
+  const { setTheme, theme } = useTheme();
   const today = dayjs().format("ddd MMM D h:mm A");
   const { date, time } = getDayTime(today);
 
@@ -36,7 +44,7 @@ const Navbar = () => {
 
   const handleNavIconClick = (id: string) => {
     switch (id) {
-      case "mode":
+      case "theme":
         setTheme((prev) => (prev === "light" ? "dark" : "light"));
         break;
 
@@ -77,25 +85,69 @@ const Navbar = () => {
 
       <div>
         <ul>
-          {NavIcons.map(({ id, img }) => (
-            <li
-              key={id}
-              aria-label={id}
-              data-tooltip-id={"navbar-tooltip"}
-              data-tooltip-content={id}
-              data-tooltip-delay-show={150}
-              className="hidden md:block dock-icon"
-            >
-              <Image
-                src={img}
-                className="size-4 icon-hover hover:scale-125 transition-all ease-in-out cursor-pointer"
-                alt={`icon-${id}`}
-                width={100}
-                height={100}
-                onClick={() => handleNavIconClick(id)}
-              />
-            </li>
-          ))}
+          {NavIcons.map(({ id, img }) =>
+            id === "theme" ? (
+              <li
+                key={id}
+                aria-label={id}
+                data-tooltip-id={"navbar-tooltip"}
+                data-tooltip-content={id}
+                data-tooltip-delay-show={150}
+                className="hidden md:block dock-icon"
+              >
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Image
+                      src={img}
+                      className="size-4 icon-hover hover:scale-125 transition-all ease-in-out cursor-pointer"
+                      alt={`icon-${id}`}
+                      width={100}
+                      height={100}
+                    />
+                  </PopoverTrigger>
+                  <PopoverContent className="w-44">
+                    <PopoverHeader>
+                      <PopoverTitle>Change Theme?</PopoverTitle>
+                      <PopoverDescription>
+                        <div className="flex w-full justify-center items-center gap-2 mt-2">
+                          <Button
+                            disabled={theme === "light"}
+                            onClick={() => handleNavIconClick(id)}
+                          >
+                            Light
+                          </Button>
+                          <Button
+                            disabled={theme === "dark"}
+                            onClick={() => handleNavIconClick(id)}
+                          >
+                            Dark
+                          </Button>
+                        </div>
+                      </PopoverDescription>
+                    </PopoverHeader>
+                  </PopoverContent>
+                </Popover>
+              </li>
+            ) : (
+              <li
+                key={id}
+                aria-label={id}
+                data-tooltip-id={"navbar-tooltip"}
+                data-tooltip-content={id}
+                data-tooltip-delay-show={150}
+                className="hidden md:block dock-icon"
+              >
+                <Image
+                  src={img}
+                  className="size-4 icon-hover hover:scale-125 transition-all ease-in-out cursor-pointer"
+                  alt={`icon-${id}`}
+                  width={100}
+                  height={100}
+                  onClick={() => handleNavIconClick(id)}
+                />
+              </li>
+            ),
+          )}
           <li key={"calender-view"} className="cursor-pointer">
             <Popover>
               <PopoverTrigger

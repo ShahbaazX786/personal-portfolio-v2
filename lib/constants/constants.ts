@@ -43,7 +43,7 @@ const NavIcons: NavIconsType[] = [
     img: "/icons/user.svg",
   },
   {
-    id: "mode",
+    id: "theme",
     img: "/icons/mode.svg",
   },
 ] as const;
