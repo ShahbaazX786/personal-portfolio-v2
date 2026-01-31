@@ -4,6 +4,7 @@ import useTextAnimator from "@/hooks/useTextAnimator";
 import { renderText } from "@/lib/helpers/component-helpers";
 import { useRef } from "react";
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
+import Image from "next/image";
 
 const Welcome = () => {
   const titleRef = useRef(null);
@@ -39,9 +40,16 @@ const Welcome = () => {
         {renderText("portfolio", "text-9xl italic font-georama", 400)}
       </h1>
 
-      <div className="sm:hidden small-screen w-full h-full flex justify-center items-center z-50">
+      <div className="sm:hidden small-screen w-full h-full flex justify-center items-center flex-col z-50 gap-5">
+        <Image
+          src={"/animated-images/stop.gif"}
+          width={200}
+          height={200}
+          alt="Stop it bruh"
+          className="bg-contain rounded-lg w-48 h-auto"
+          unoptimized
+        />
         <Alert variant="destructive">
-          {/* <Terminal /> */}
           <AlertTitle className="font-bold text-lg">Heads up!</AlertTitle>
           <AlertDescription className="text-base">
             <ol className="pl-4">
